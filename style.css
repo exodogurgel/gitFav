@@ -1,0 +1,248 @@
+/*================= GERAL ====================*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: hsl(194, 72%, 13%);
+  --color-odd: hsla(195, 61%, 6%, 0.5);
+  --color-even: hsl(192, 65%, 7%);
+  --border-color: hsl(191, 31%, 42%);
+  --bg-btn: hsl(195, 91%, 25%);
+
+  font-size: 62.5%;
+}
+
+body * {
+  font-size: 2rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #000;
+  color: #e1e1e6;
+
+  font-size: 1.6rem;
+  overflow: hidden;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+#app {
+  max-width: clamp(30rem, 40rem + 49vw, 112rem);
+  margin: 0 auto;
+}
+
+/*================= HEADER ====================*/
+
+header {
+  margin: 10.5rem 0 8.7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .search {
+  display: flex;
+  gap: 0.8rem;
+}
+
+header input {
+  background-color: #06181c;
+  width: clamp(10rem, 20rem + 20vw, 46.2rem);
+  height: 4.8rem;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0 1.6rem;
+
+  font-size: 1.6rem;
+  color: white;
+}
+
+header input:focus {
+  outline: 1px solid var(--bg-btn);
+}
+
+header button {
+  background-color: var(--bg-btn);
+  color: white;
+  padding: 1.2rem 3.2rem;
+  border: none;
+  border-radius: 0.5rem;
+
+  text-transform: uppercase;
+  font-size: 1.4rem;
+
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+header button:hover {
+  background-color: white;
+  color: var(--bg-btn);
+}
+
+header button:hover > svg path {
+  fill: var(--bg-btn);
+}
+
+/*================= TABLE ====================*/
+main {
+  max-width: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: 1.2rem;
+  overflow: overlay;
+
+  max-height: 60vh;
+}
+
+/* SCROLLBAR */
+
+main::-webkit-scrollbar {
+  width: 2.2rem;
+}
+
+main::-webkit-scrollbar-thumb {
+  border: 0.7rem solid transparent;
+  background-clip: padding-box;
+  background-color: var(--border-color);
+  border-radius: 1.2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 1.2rem;
+}
+
+table tr {
+  background-color: var(--color-even);
+}
+
+table tr:nth-child(odd) {
+  background-color: var(--color-odd);
+}
+
+/*================= TABLE CORREÇÃO DE LAYOUT ====================*/
+/*
+table td,
+table th {
+  width: 28rem;
+  padding-block: 1.6rem;
+  padding-left: 4rem;
+}
+
+thead :nth-child(1) {
+  width: clamp(30rem, 40rem + 55vw, 90rem);
+}
+
+td:nth-child(3),
+td:nth-child(4) {
+  padding-left: 8.5rem;
+}
+
+td:nth-child(1) {
+  width: clamp(10rem, 10rem + 37vw, 49rem);
+}
+*/
+/*================= THEAD ====================*/
+thead {
+  background-color: var(--bg-btn);
+  text-align: left;
+  height: 6.4rem;
+
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+thead tr th,
+td {
+  border-bottom: 1px solid var(--border-color);
+  padding: 2.4rem 0 2.4rem 4rem;
+}
+
+/*================= TBODY ====================*/
+
+tbody {
+  overflow-y: overlay;
+  max-height: 52vh;
+}
+
+tbody td {
+  padding-block: 1.4rem;
+}
+
+td.user {
+  display: flex;
+  gap: 1.6rem;
+}
+
+td.user img {
+  height: 5.8rem;
+  width: 5.8rem;
+
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+td.user a {
+  text-decoration: none;
+  color: #e1e1e6;
+
+  line-height: 160%;
+}
+
+td.user p {
+  font-weight: bold;
+}
+
+td.user span {
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+td.remove button {
+  padding: 1rem 1rem 1rem 0;
+  background-color: transparent;
+  color: #f75a68;
+  border: none;
+  cursor: pointer;
+}
+
+td.remove button:hover {
+  transform: scale(1.04);
+}
+
+#noFavorites .wrapper {
+  padding: 0;
+  padding-right: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6rem;
+  height: 46vh;
+}
+
+#noFavorites p {
+  font-size: 4rem;
+  font-style: Bold;
+  line-height: 2.5rem;
+  color: #4e5455;
+}

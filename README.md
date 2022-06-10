@@ -20,7 +20,6 @@
 
 <p align="center">
  <a href="#-about">About</a> •
- <a href="#-Features">Features</a> •
  <a href="#-layout">Layout</a> • 
  <a href="#-tech-stack">Tech Stack</a> • 
  <a href="#-author">Author</a> • 
@@ -36,6 +35,7 @@ Application that lets you save your favorite github friends
   and was organized in the standard of classes with ECMAScript modules
 
 ---
+## 🎨 Layout
 
 ### Web
 
